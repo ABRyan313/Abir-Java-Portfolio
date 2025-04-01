@@ -106,7 +106,7 @@ export const About = () => {
             </div>
           </div>
         </div>
-      </RevealOnScroll>
+        </RevealOnScroll>
     </section>
   );
 };
