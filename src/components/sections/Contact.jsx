@@ -8,24 +8,24 @@ export const Contact = () => {
         name: "",
         email: "",
         message: "",
-      });
-    
-      const handleSubmit = (e) => {
+    });
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         emailjs
-          .sendForm(
-            import.meta.env.VITE_service_lrio2td,
-            import.meta.env.VITE_template_t5j2rr2,
-            e.target,
-            import.meta.env.VITE_ZuVpvmSWoilkUiUg9
-          )
-          .then((result) => {
-            alert("Message Sent!");
-            setFormData({ name: "", email: "", message: "" });
-          })
-          .catch(() => alert("Oops! Something went wrong. Please try again."));
-      };
+            .sendForm(
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
+                e.target,
+                import.meta.env.VITE_PUBLIC_KEY
+            )
+            .then((result) => {
+                alert("Message Sent!");
+                setFormData({ name: "", email: "", message: "" });
+            })
+            .catch(() => alert("Oops! Something went wrong. Please try again."));
+    };
 
     return (
         <section
@@ -39,15 +39,16 @@ export const Contact = () => {
                         Get In Touch
                     </h2>
 
-                    <form className="space-y-6 onSubmit={handleSubmit}">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
-                            <input type="text" id="name" name="name" required
-                            value={formData.name}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            <input type="text" id="name" name="name"
+                                required
+                                value={formData.name}
+                                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                                 placeholder="Name..."
                                 onChange={(e) =>
                                     setFormData({ ...formData, name: e.target.value })
-                                  }
+                                }
                             />
                         </div>
 
@@ -56,20 +57,22 @@ export const Contact = () => {
                                 placeholder="Whatever@whatever.com"
                                 onChange={(e) =>
                                     setFormData({ ...formData, email: e.target.value })
-                                  }
+                                }
                             />
                         </div>
 
                         <div className="relative">
                             <textarea
-                                id="message" name="message"
+                                id="message"
+                                name="message"
                                 required
+                                rows={5}
                                 value={formData.message}
                                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                                 placeholder="Your message..."
                                 onChange={(e) =>
                                     setFormData({ ...formData, message: e.target.value })
-                                  }
+                                }
                             />
                         </div>
 

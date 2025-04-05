@@ -14,14 +14,14 @@ export const MobileMenu = ({menuOpen, setMenuOpen }) => {
                        }
                      `}
         >
-            <button onclick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-white txt-3xl focus:outline-none cursor-pointer"
+            <button onClick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-white txt-3xl focus:outline-none cursor-pointer"
             aria-label="Close Menu"
                 >
                 &times;
             </button>
 
             <a href="home" 
-               onclick={() => setMenuOpen(false) }
+               onClick={() => setMenuOpen(false) }
                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                 ${
                   menuOpen
@@ -34,7 +34,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen }) => {
             </a>
 
                     <a href="about" 
-                    onclick={() => setMenuOpen(false) }
+                    onClick={() => setMenuOpen(false) }
                     className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                       ${
                         menuOpen
@@ -47,7 +47,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen }) => {
                     </a>
 
                     <a href="projects" 
-                    onclick={() => setMenuOpen(false) }
+                    onClick={() => setMenuOpen(false) }
                     className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                       ${
                         menuOpen
@@ -60,7 +60,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen }) => {
                     </a>
 
                     <a href="contact"
-                    onclick={() => setMenuOpen(false) }
+                    onClick={() => setMenuOpen(false) }
                     className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                       ${
                         menuOpen
